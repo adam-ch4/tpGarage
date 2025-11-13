@@ -53,12 +53,13 @@ public class Stationnement {
 	/**
 	 * Retourne une représentation textuelle du statut du stationnement.
 	 *
-	 * @return Une chaîne représentant l'état du stationnement, incluant la date d'entrée
+	 * @return Une chaîne représentant l'état du stationnement, incluant la date
+	 *         d'entrée
 	 *         et soit "en cours" soit la date de sortie.
 	 */
 	@Override
 	public String toString() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); // Correction: "yyyy" au lieu de "yyy"
 		return String.format("Stationnement{ entree=%s, %s }",
 				dateFormat.format(entree),
 				estEnCours() ? "en cours" : "sortie=" + dateFormat.format(fin));
